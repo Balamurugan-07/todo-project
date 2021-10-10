@@ -1,0 +1,58 @@
+<ul class="list-group align-self-center">
+  <li
+    class="
+      list-group-item
+      d-flex
+      justify-content-between
+      align-items-center
+      w-50
+    "
+    *ngFor="let todo of todoList; let i = index"
+  >
+    <div>
+      <input
+        type="checkbox"
+        style="margin-right: 10px"
+        (input)="moveToDone(i)"
+      />
+      <strong #todo>{{ todo }}</strong>
+    </div>
+    <button
+      type="button"
+      class="btn btn-sm rounded btn-danger"
+      (click)="removeTodo(i)"
+    >
+      x
+    </button>
+  </li>
+</ul>
+<hr />
+<ul class="list-group align-self-center">
+  <li
+    class="
+      list-group-item
+      d-flex
+      justify-content-between
+      align-items-center
+      w-50
+    "
+    *ngFor="let todo of todoListDone; let i = index"
+  >
+    <div>
+      <input
+        type="checkbox"
+        style="margin-right: 10px"
+        (input)="moveToTodo(i)"
+        checked
+      />
+      <strong class="done text-secondary">{{ todo }}</strong>
+    </div>
+    <button
+      type="button"
+      class="btn btn-sm rounded btn-secondary"
+      (click)="removeTodoDone(i)"
+    >
+      x
+    </button>
+  </li>
+</ul>
